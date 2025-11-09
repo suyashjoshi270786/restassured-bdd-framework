@@ -1,4 +1,4 @@
-package pojo;
+package com.api.automation.pojo;
 
 public class AddPlaceResponse {
 

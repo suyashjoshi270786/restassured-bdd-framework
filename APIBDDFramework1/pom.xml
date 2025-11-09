@@ -35,13 +35,14 @@
     </dependencyManagement>
 
     <dependencies>
-        <!-- Rest Assured -->
+        <!-- Rest Assured (compile scope because utils in src/main use it) -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${restassured.version}</version>
-            <scope>test</scope>
         </dependency>
+
+        <!-- Optional RA modules (keep as test unless used in main) -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-path</artifactId>
@@ -77,7 +78,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Jackson (for POJOs) -->
+        <!-- Jackson (POJOs) -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -109,9 +110,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
                 <configuration>
-                    <!-- Your TestNG+Cucumber runner class should end with *Test.java -->
+                    <!-- Pick up both *Test.java and *Runner.java (e.g., TestRunner.java) -->
                     <includes>
                         <include>**/*Test.java</include>
+                        <include>**/*Runner.java</include>
                     </includes>
                 </configuration>
             </plugin>

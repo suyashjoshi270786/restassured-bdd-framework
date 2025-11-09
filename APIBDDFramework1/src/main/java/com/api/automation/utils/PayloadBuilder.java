@@ -1,8 +1,7 @@
-package utils;
+package com.api.automation.utils;
 
-import pojo.AddPlaceRequest;
-import pojo.Location;
-
+import com.api.automation.pojo.AddPlaceRequest;
+import com.api.automation.pojo.Location;
 import java.util.Arrays;
 
 public class PayloadBuilder {

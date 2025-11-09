@@ -1,4 +1,4 @@
-package utils;
+package com.api.automation.utils;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -9,7 +9,7 @@ import io.restassured.specification.ResponseSpecification;
 
 public class SpecFactory {
 
-    public static RequestSpecification base() {
+    public static io.restassured.specification.RequestSpecification base() {
         return new RequestSpecBuilder()
                 .setBaseUri(Config.get("baseUrl"))
                 .addQueryParam("key", Config.get("key"))
@@ -18,7 +18,7 @@ public class SpecFactory {
                 .build();
     }
 
-    public static ResponseSpecification okJson() {
+    public static io.restassured.specification.ResponseSpecification okJson() {
         return new ResponseSpecBuilder()
                 .expectStatusCode(200)
                 .expectContentType(ContentType.JSON)

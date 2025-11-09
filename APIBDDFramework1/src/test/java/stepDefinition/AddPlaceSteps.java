@@ -3,12 +3,12 @@ package stepDefinition;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import pojo.AddPlaceRequest;
-import pojo.AddPlaceResponse;
-import pojo.GetPlaceResponse;
+
+import com.api.automation.utils.PayloadBuilder;   // ✅ new package
+import com.api.automation.utils.SpecFactory;      // ✅ new package
+import com.api.automation.pojo.AddPlaceRequest;
+import com.api.automation.pojo.AddPlaceResponse;
 import resourcesEnum.APIResources;
-import utils.PayloadBuilder;
-import utils.SpecFactory;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
